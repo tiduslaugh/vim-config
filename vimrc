@@ -1,4 +1,3 @@
-execute pathogen#infect()
 set nocompatible               " disable vi compatibility mode
 set backspace=indent,eol,start " make backspace behave properly by default
 set autoindent                 " autoindent files by default
