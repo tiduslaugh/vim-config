@@ -3,6 +3,7 @@ set backspace=indent,eol,start " make backspace behave properly by default
 set autoindent                 " autoindent files by default
 set hidden                     " hide when switching buffers
 syntax on                      " syntax highlighting on
+set background=dark
 color solarized                " good colors
 set number                     " enable line numbers
 set encoding=utf-8             " no, _I_ tf-8
@@ -46,7 +47,15 @@ nnoremap <leader>i i_<Esc>r
 nnoremap <leader>a a_<Esc>r
 
 " set guifont=Inconsolata-dz_for_Powerline:h10
-set guifont=mononoki:h10
+if has('gui_running')
+  set guioptions-=T  " no toolbar
+  " set lines=60 columns=108 linespace=0
+  if has('gui_win32')
+    set guifont=Mononoki:h10:cANSI
+  else
+    set guifont=Mononoki\ 12
+  endif
+endif
 filetype plugin indent on
 
 let g:html_indent_inctags = "html,body,head,tbody" 
