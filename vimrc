@@ -36,7 +36,7 @@ set path=.,**
 " noremap <leader>a :argadd <c-r>=fnameescape(expand('%:p:h'))<cr>/*<C-d>
 noremap <leader>b :b <C-d>
 " bring up an edit command that can search all subdirs
-noremap <leader>e :e **/
+noremap <leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 noremap <leader>f :find *
 " noremap <leader>i :Ilist<space>
 noremap <leader>j :tjump /
