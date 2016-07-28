@@ -4,7 +4,6 @@ set autoindent                 " autoindent files by default
 set hidden                     " hide when switching buffers
 syntax on                      " syntax highlighting on
 set background=dark
-color solarized                " good colors
 set number                     " enable line numbers
 set encoding=utf-8             " no, _I_ tf-8
 set shiftwidth=4               " autoindent tabs are 4 spaces
@@ -51,7 +50,11 @@ if has('gui_running')
   set guioptions-=T  " no toolbar
   " set lines=60 columns=108 linespace=0
   if has('gui_win32')
-    set guifont=Mononoki:h10:cANSI
+    if hostname() == 'MALEX-PC'
+      set guifont=Source\ Code\ Pro:h12:cANSI
+    else
+      set guifont=Mononoki:h14:cANSI
+    end
   else
     set guifont=Mononoki\ 12
   endif
@@ -62,3 +65,7 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:rainbow_active=1
 
 execute pathogen#infect()
+let base16colorspace="256"
+set t_Co=256
+set background=dark
+colorscheme base16-eighties
