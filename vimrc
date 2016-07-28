@@ -62,7 +62,7 @@ endif
 filetype plugin indent on
 
 let g:html_indent_inctags = "html,body,head,tbody" 
-let g:rainbow_active=1
+" let g:rainbow_active=1
 
 execute pathogen#infect()
 let base16colorspace="256"
