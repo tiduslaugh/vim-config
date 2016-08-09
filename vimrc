@@ -65,9 +65,20 @@ let g:html_indent_inctags = "html,body,head,tbody"
 " let g:rainbow_active=1
 
 execute pathogen#infect()
-let base16colorspace="256"
-set t_Co=256
-set background=dark
-colorscheme base16-eighties
-
+if has("win32") || has("win16")
+    let base16colorspace="256"
+    set t_Co=256
+    set background=dark
+    colorscheme base16-eighties
+else
+    let os = substitute(system('uname'), "\n", "", "")
+    if os == "FreeBSD"
+        colorscheme desert
+    else
+        let base16colorspace="256"
+        set t_Co=256
+        set background=dark
+        colorscheme base16-eighties
+    end
+end
 let g:python_highlight_all=1
